@@ -17,7 +17,7 @@ public class Main {
             System.out.println("4. Mostrar información de todas las cabinas");
             System.out.println("5. Reiniciar cabina");
             System.out.println("6. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.println("Seleccione una opción: ");
             int opcion = sc.nextInt();
             sc.nextLine();
 
@@ -29,7 +29,7 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Ingrese el ID de la cabina: ");
+                    System.out.println("Ingrese el ID de la cabina: ");
                     String idCabina = sc.nextLine();
                     CabinaTelefonica nuevaCabina = new CabinaTelefonica(idCabina);
                     cabinas.add(nuevaCabina);
@@ -37,21 +37,21 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.print("Ingrese el ID de la cabina a seleccionar: ");
+                    System.out.println("Ingrese el ID de la cabina a seleccionar: ");
                     idCabina = sc.nextLine();
                     cabinaSeleccionada = buscarCabina(cabinas, idCabina);
                     if (cabinaSeleccionada != null) {
-                        System.out.print("Ingrese el tipo de llamada (local, larga_distancia, celular): ");
+                        System.out.println("Ingrese el tipo de llamada (local, larga_distancia, celular): ");
                         String tipo = sc.nextLine();
                         int duracion = (int) (Math.random() * 10) + 1;
-                        System.out.print("\nDuracion en minutos: " + duracion);
+                        System.out.println("\nDuracion en minutos: " + duracion);
                         cabinaSeleccionada.registrarLlamada(tipo, duracion);
                     } else {
                         System.out.println("No hay ninguna cabina seleccionada.");
                     }
                     break;
                 case 3:
-                    System.out.print("Ingrese el ID de la cabina a seleccionar: ");
+                    System.out.println("Ingrese el ID de la cabina a seleccionar: ");
                     idCabina = sc.nextLine();
                     cabinaSeleccionada = buscarCabina(cabinas, idCabina);
                     if (cabinaSeleccionada != null) {
@@ -70,7 +70,7 @@ public class Main {
                     }
                     break;
                 case 5:
-                    System.out.print("Ingrese el ID de la cabina a seleccionar: ");
+                    System.out.println("Ingrese el ID de la cabina a seleccionar: ");
                     idCabina = sc.nextLine();
                     cabinaSeleccionada = buscarCabina(cabinas, idCabina);
                     if (cabinaSeleccionada != null) {
